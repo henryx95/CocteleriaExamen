@@ -1,0 +1,27 @@
+﻿@using System.Data;
+@using CoctelesExamen.Models;
+@{
+    ViewData["Title"] = "Cocteles";
+}
+<h1>@ViewData["Cocteles relacionados"]</h1>
+
+    <table id="example"
+               class="table">
+            @*<table style="border:1px solid black; margin:auto; width:1500px;">*@
+            <tr>
+                <th id="cabeceroN" hidden>Id</th>
+                <th id="cabeceroN">Nombre</th>
+                <th id="cabecero">Detalle</th>
+                <th id="cabecero">Agregar a Favoritos</th>
+            </tr>
+            @foreach (Coctel p in Model)
+            {
+
+                <tr>
+                    <td id="cuerpo" hidden>@Convert.ToString(p.idDrink)</td>
+                    <td id="cuerpo">@Convert.ToString(p.strDrink)</td>
+                    <td id="cuerpobtn" onclick="openModal()"></td>
+                    <td id="cuerpobtn2" onclick="saveToLocalStorage()"></td>
+                </tr>
+            }
+        </table>
